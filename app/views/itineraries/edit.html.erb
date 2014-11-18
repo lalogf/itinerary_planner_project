@@ -1,0 +1,37 @@
+
+<div class="container">
+
+  <h1>Add new Itinerary</h1>
+
+  <div class="row" style="margin-top:20px">
+    <div class="col-md-8">
+      <%= bootstrap_form_for @itinerary, method: "put" do |f| %>
+
+      <div class="col-md-12">
+        <%= f.text_field(:name, placeholder: "Trip Name") %>
+      </div>
+      <div class="col-md-8">
+
+        <%= f.text_field(:origin, placeholder: "Origin") %>
+        <%= f.text_field(:destination, placeholder: "Destination") %>
+
+
+      </div>
+      <div class="col-md-4">
+
+        <%= f.date_field :departure %>
+        <%= f.date_field :return_on %>
+      </div>
+
+      <div class="col-md-3">
+        <%= f.submit  "Update", class: "btn btn-success" %>
+      </div>
+      <% end %>
+      <div class="col-md-3">
+        <%= bootstrap_form_for @itinerary, method: "delete" do %>
+        <%= submit_tag "Delete", class: "btn btn-danger" %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

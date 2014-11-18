@@ -1,0 +1,87 @@
+	<div class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <a style="margin:10px" href="/itineraries/new" class="btn btn-warning"> Add trip</a>
+
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <% @itinerary.each do |it|%>
+        <div class="col-md-12">
+
+          <h1> <%= it.name %> </h1>
+          <p style="color:#e74c3c"class="pull-right">Ends: <%= Date.parse(it.return_on.to_s).strftime('%A %d %b %Y')  %> </p> <p style="color:#00bc8c">   Starts: <%= Date.parse(it.departure.to_s).strftime('%A %d %b %Y')  %></p>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <p class="pull-right">Destination: <%= it.destination %></p>
+              <h3 class="panel-title">Origin: <%= it.origin%></h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-5">
+                <img class="img-circle"src="http://lorempixel.com/output/city-q-c-200-200-8.jpg" style="text-align:center; margin-bottom:10px"alt="...">
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-6">
+                <h4>Waypoints</h4>
+                <ul>
+                  <li> Attraction 1  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 2  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 3  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 4  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 5  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 6  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 7  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+                  <li> Attraction 8  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+
+                </ul>
+                <a href="/itineraries/<%=it.id%>/waypoints/new" class="pull-right pull-down btn btn-xs btn-info"> Add Waypoint</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end %>
+      </div>
+
+      <div class="col-md-2 col-md-offset-1">
+        <div class="panel panel-info sidebar">
+          <div class="panel-heading">
+
+            <h3 class="panel-title">Friends for travel</h3>
+            <a href="/travelers/new" class=" btn btn-warning btn-xs"> Add partner</a>
+          </div>
+          <div class="panel-body ">
+
+            <% @friends.each do |f| %>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;  <a href="/travelers/<%= f.id%>"><%= f.firstname %> <%= f.lastname%></a> <br>
+
+            <% end %>
+
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1> <%= @itinerary.name %> </h1>
+			<p style="color:#e74c3c"class="pull-right">Ends: <%= Date.parse(@itinerary.return_on.to_s).strftime('%A %d %b %Y')  %> </p> <p style="color:#00bc8c">   Starts: <%= Date.parse(@itinerary.departure.to_s).strftime('%A %d %b %Y')  %></p>
+			</div>
+			<div class="col-md-8">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<p class="pull-right">Destination: <%= @itinerary.destination %></p>
+						<h3 class="panel-title">Origin: <%= @itinerary.origin%></h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-md-5">
+							<img class="img-circle"src="http://lorempixel.com/output/city-q-c-200-200-8.jpg" style="text-align:center; margin-bottom:10px"alt="...">
+
+
+
+
+						</div>
+						<div class="col-md-1"></div>
+						<div class="col-md-6">
+							<h4>Waypoints</h4>
+							<ul>
+								<li> Attraction 1  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 2  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 3  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 4  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 5  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 6  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 7  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+								<li> Attraction 8  &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;</li>
+
+							</ul>
+							<a href="" class="pull-right pull-down btn btn-xs btn-info"> Add Waypoint</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

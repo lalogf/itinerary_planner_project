@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h1>Edit Traveler</h1>
+
+  <div class="row" style="margin-top:20px">
+
+    <div class="col-md-6">
+
+
+      <div class="col-md-12">
+
+        <h3><%= @traveler.firstname %></h2><br>
+        <h3><%= @traveler.lastname %></h2><br>
+        <h3><%= @traveler.email%></h2><br>
+
+
+
+
+      </div>
+
+
+
+      <div class="col-md-3">
+        <%= bootstrap_form_for @traveler, method: "delete" do  %>
+        <%= submit_tag "Delete", class: "btn btn-danger" %>
+        <%end%>
+
+      </div>
+    </div>
+  </div>
